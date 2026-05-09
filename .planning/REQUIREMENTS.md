@@ -64,6 +64,7 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
+| *(Phase 1 baseline — interactive map, GPX tracks, stats, carousel, tweaks)* | Phase 1 | Complete |
 | MEDIA-01 | Phase 2 | Pending |
 | MEDIA-02 | Phase 2 | Pending |
 | MEDIA-03 | Phase 2 | Pending |
@@ -87,7 +88,8 @@
 - v1 requirements: 18 total
 - Mapped to phases: 18
 - Unmapped: 0 ✓
+- Phase 1 baseline: Complete (validated 2026-05-09)
 
 ---
 *Requirements defined: 2026-05-09*
-*Last updated: 2026-05-09 after initial definition*
+*Last updated: 2026-05-09 — Phase 1 marked complete in traceability*
