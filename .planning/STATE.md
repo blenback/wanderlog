@@ -12,7 +12,7 @@ See: .planning/PROJECT.md (updated 2026-05-09)
 Phase: 2 of 4 (Trip Photos & Notes)
 Plan: 0 of TBD in current phase
 Status: Ready to plan
-Last activity: 2026-05-09 — Roadmap created; Phase 1 validated as complete
+Last activity: 2026-05-09 — UI design contract approved for Phase 2
 
 Progress: [██░░░░░░░░] 25%
 
@@ -66,5 +66,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-05-09
-Stopped at: Roadmap and state initialized; Phase 1 validated complete
-Resume file: None
+Stopped at: Phase 2 UI-SPEC approved; ready for planning
+Resume file: .planning/02-trip-photos-notes/02-UI-SPEC.md
