@@ -10,27 +10,27 @@ See: .planning/PROJECT.md (updated 2026-05-09)
 ## Current Position
 
 Phase: 2 of 4 (Trip Photos & Notes)
-Plan: 2 of 2 in current phase (02-02 in progress — paused at human checkpoint)
-Status: In progress — awaiting human action (add photos to media/bia/)
-Last activity: 2026-05-09 — Plan 02-02 Task 1 complete (data/bia/meta.json created); paused at checkpoint for photo addition
+Plan: 2 of 2 in current phase (02-02 complete)
+Status: Phase 2 complete — all plans done
+Last activity: 2026-05-09 — Plan 02-02 complete; photos added to media/bia/, pipeline fully verified (DATA-01, MEDIA-01, MEDIA-02)
 
-Progress: [███░░░░░░░] 37%
+Progress: [█████░░░░░] 50%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 1
-- Average duration: ~2m
-- Total execution time: ~2m
+- Total plans completed: 2
+- Average duration: ~4m
+- Total execution time: ~7m
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| Phase 2 | 1 | ~2m | ~2m |
+| Phase 2 | 2 | ~7m | ~4m |
 
 **Recent Trend:**
-- Last 5 plans: 02-01 (~2m)
+- Last 5 plans: 02-01 (~2m), 02-02 (~5m incl. human checkpoint)
 - Trend: -
 
 *Updated after each plan completion*
@@ -55,7 +55,6 @@ None yet.
 
 ### Blockers/Concerns
 
-- Phase 2: data/bia/meta.json now exists; media/bia/ directory created but photos (001-clifftop.jpg, 002-village.jpg) still need to be added by developer before carousel can render real images
 - Phase 4: Asset paths under /urlaub sub-path must be verified before deployment (CDN links are absolute, local file refs may need attention)
 
 ## Deferred Items
@@ -69,5 +68,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-05-09
-Stopped at: Plan 02-02 Task 1 complete — data/bia/meta.json created; paused at checkpoint:human-verify (Task 2)
-Resume file: .planning/02-trip-photos-notes/02-02-PLAN.md (resume after adding photos to media/bia/)
+Stopped at: Phase 2 complete — all plans done (02-01 and 02-02)
+Resume file: None — ready for Phase 3
