@@ -59,7 +59,7 @@ Plans:
   4. Adding a new trip requires only creating `data/<trip-id>/meta.json` (with GPX paths) and running the script — no manual data.js editing
 **Plans**: 2 plans
 Plans:
-- [ ] 02.1-01-PLAN.md — create/extend meta.json for all 7 trips with gpx_stages arrays
+- [x] 02.1-01-PLAN.md — create/extend meta.json for all 7 trips with gpx_stages arrays
 - [ ] 02.1-02-PLAN.md — write scripts/build_data.py, run it, verify map renders correctly
 
 ### Phase 3: Trail Snacks Gallery
@@ -94,6 +94,6 @@ Phases execute in numeric order: 2.1 → 3 → 4
 |-------|----------------|--------|-----------|
 | 1. Core Map App | -/- | Complete | 2026-05-09 |
 | 2. Trip Photos & Notes | 2/2 | Complete | 2026-05-09 |
-| 2.1. GPX Data Pipeline | 0/2 | Not started | - |
+| 2.1. GPX Data Pipeline | 1/2 | In progress | - |
 | 3. Trail Snacks Gallery | 0/TBD | Not started | - |
 | 4. GitHub Pages Deployment | 0/TBD | Not started | - |

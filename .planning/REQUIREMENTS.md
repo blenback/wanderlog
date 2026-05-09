@@ -19,10 +19,10 @@
 
 ### GPX Data Pipeline
 
-- [ ] **GPX-01**: Each trip's `data/<trip-id>/meta.json` declares the GPX stage files for that trip (e.g., `"gpx_stages": ["stage1.gpx", "stage2.gpx"]`)
+- [x] **GPX-01**: Each trip's `data/<trip-id>/meta.json` declares the GPX stage files for that trip (e.g., `"gpx_stages": ["stage1.gpx", "stage2.gpx"]`)
 - [ ] **GPX-02**: A build script (e.g., `scripts/build_data.py`) reads all `data/<trip-id>/meta.json` files, parses the referenced GPX files, and writes a new `data.js`
 - [ ] **GPX-03**: The map renders all 7 trips correctly after regenerating `data.js` from GPX sources (tracks, stats, elevation profiles unchanged)
-- [ ] **GPX-04**: Adding a new trip requires only creating `data/<trip-id>/meta.json` with GPX paths and running the build script — no manual `data.js` editing
+- [x] **GPX-04**: Adding a new trip requires only creating `data/<trip-id>/meta.json` with GPX paths and running the build script — no manual `data.js` editing
 
 ### Snack Gallery
 
@@ -78,10 +78,10 @@
 | DATA-01 | Phase 2 | Complete (02-01) |
 | DATA-02 | Phase 2 | Complete (02-01) |
 | DATA-03 | Phase 2 | Complete (02-01) |
-| GPX-01 | Phase 2.1 | Pending |
+| GPX-01 | Phase 2.1 | Complete (02.1-01) |
 | GPX-02 | Phase 2.1 | Pending |
 | GPX-03 | Phase 2.1 | Pending |
-| GPX-04 | Phase 2.1 | Pending |
+| GPX-04 | Phase 2.1 | Complete (02.1-01) |
 | SNCK-01 | Phase 3 | Pending |
 | SNCK-02 | Phase 3 | Pending |
 | SNCK-03 | Phase 3 | Pending |
