@@ -168,9 +168,36 @@ function StatsPanel({ trip, showElevation, meta }) {
 
 // ─── PHOTO CAROUSEL ──────────────────────────────────────────────────────
 
-function PhotoCarousel({ trip }) {
+function PhotoItem({ trip, photo, index, isActive, onClick }) {
+  const [errored, setErrored] = useState(false);
+  return (
+    <div className={`ta-photo ${isActive ? 'is-active' : ''}`} onClick={onClick}>
+      <div className="ta-photo-img">
+        {errored
+          ? <svg viewBox="0 0 200 140" preserveAspectRatio="none" width="100%" height="100%">
+              <rect width="200" height="140" fill="var(--tan)" />
+            </svg>
+          : <img
+              src={`media/${trip.id}/${photo.filename}`}
+              alt={photo.caption || ''}
+              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+              onError={() => setErrored(true)}
+            />
+        }
+      </div>
+      <div className="ta-photo-caption">
+        <span className="ta-photo-cap">{photo.caption}</span>
+      </div>
+    </div>
+  );
+}
+
+function PhotoCarousel({ trip, meta }) {
   const [idx, setIdx] = useState(0);
-  const photos = useMemo(() => {
+
+  useEffect(() => { setIdx(0); }, [trip.id]);
+
+  const placeholderPhotos = useMemo(() => {
     const captions = [
       'first morning on the trail',
       'pass crossing — clouds rolling in',
@@ -191,13 +218,21 @@ function PhotoCarousel({ trip }) {
     }));
   }, [trip]);
 
+  const hasRealPhotos = meta && meta.photos && meta.photos.length > 0;
+  const photos = hasRealPhotos ? meta.photos : placeholderPhotos;
+
   const visible = 5;
   return (
     <div className="ta-carousel">
       <div className="ta-carousel-head">
         <div>
           <div className="ta-carousel-overline">Field notes</div>
-          <div className="ta-carousel-title">{photos.length} photos · drop real images into media/{trip.id}/ to replace</div>
+          <div className="ta-carousel-title">
+            {hasRealPhotos
+              ? `${photos.length} photos`
+              : `${photos.length} photos · drop real images into media/${trip.id}/ to replace`
+            }
+          </div>
         </div>
         <div className="ta-carousel-controls">
           <button onClick={() => setIdx(Math.max(0, idx - 1))} disabled={idx === 0} aria-label="Previous">←</button>
@@ -207,15 +242,27 @@ function PhotoCarousel({ trip }) {
       </div>
       <div className="ta-carousel-strip">
         <div className="ta-carousel-track" style={{ transform: `translateX(calc(${-idx * (100 / visible)}%))` }}>
-          {photos.map((p, i) =>
-            <div key={p.id} className={`ta-photo ${i === idx ? 'is-active' : ''}`} onClick={() => setIdx(i)}>
-              <PhotoPlaceholder trip={trip} photo={p} index={i} />
-              <div className="ta-photo-caption">
-                <span className="ta-photo-stage">stage {p.stage}</span>
-                <span className="ta-photo-cap">{p.caption}</span>
-              </div>
-            </div>
-          )}
+          {hasRealPhotos
+            ? photos.map((photo, i) =>
+                <PhotoItem
+                  key={photo.filename}
+                  trip={trip}
+                  photo={photo}
+                  index={i}
+                  isActive={i === idx}
+                  onClick={() => setIdx(i)}
+                />
+              )
+            : photos.map((p, i) =>
+                <div key={p.id} className={`ta-photo ${i === idx ? 'is-active' : ''}`} onClick={() => setIdx(i)}>
+                  <PhotoPlaceholder trip={trip} photo={p} index={i} />
+                  <div className="ta-photo-caption">
+                    <span className="ta-photo-stage">stage {p.stage}</span>
+                    <span className="ta-photo-cap">{p.caption}</span>
+                  </div>
+                </div>
+              )
+          }
         </div>
       </div>
     </div>
