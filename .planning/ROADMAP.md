@@ -43,7 +43,7 @@ Decimal phases appear between their surrounding integers in numeric order.
   5. The stats panel falls back to the data.js blurb when no meta.json exists
 **Plans**: 2 plans
 Plans:
-- [ ] 02-01-PLAN.md — app.jsx meta fetch pipeline and PhotoCarousel real-image mode
+- [x] 02-01-PLAN.md — app.jsx meta fetch pipeline and PhotoCarousel real-image mode
 - [ ] 02-02-PLAN.md — sample data scaffolding (data/bia/meta.json + media/bia/)
 **UI hint**: yes
 
@@ -78,6 +78,6 @@ Phases execute in numeric order: 2 → 3 → 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Core Map App | -/- | Complete | 2026-05-09 |
-| 2. Trip Photos & Notes | 0/2 | Not started | - |
+| 2. Trip Photos & Notes | 1/2 | In progress | - |
 | 3. Trail Snacks Gallery | 0/TBD | Not started | - |
 | 4. GitHub Pages Deployment | 0/TBD | Not started | - |

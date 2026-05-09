@@ -7,15 +7,15 @@
 
 ### Trip Media
 
-- [ ] **MEDIA-01**: Carousel loads real `<img>` elements from `media/<trip-id>/` folder using filenames listed in meta.json
-- [ ] **MEDIA-02**: Each carousel photo displays its per-photo caption from meta.json
-- [ ] **MEDIA-03**: When no meta.json or photos exist for a trip, placeholder SVG art is shown (backward compatible)
+- [x] **MEDIA-01**: Carousel loads real `<img>` elements from `media/<trip-id>/` folder using filenames listed in meta.json
+- [x] **MEDIA-02**: Each carousel photo displays its per-photo caption from meta.json
+- [x] **MEDIA-03**: When no meta.json or photos exist for a trip, placeholder SVG art is shown (backward compatible)
 
 ### Trip Data
 
-- [ ] **DATA-01**: Each trip can have a `data/<trip-id>/meta.json` file containing: notes text, photo list (filename + caption), and an optional display title override
-- [ ] **DATA-02**: Trip notes from meta.json appear in the stats panel (replacing the hardcoded blurb in data.js)
-- [ ] **DATA-03**: Stats panel falls back to the data.js blurb when no meta.json exists
+- [x] **DATA-01**: Each trip can have a `data/<trip-id>/meta.json` file containing: notes text, photo list (filename + caption), and an optional display title override
+- [x] **DATA-02**: Trip notes from meta.json appear in the stats panel (replacing the hardcoded blurb in data.js)
+- [x] **DATA-03**: Stats panel falls back to the data.js blurb when no meta.json exists
 
 ### Snack Gallery
 
@@ -65,12 +65,12 @@
 | Requirement | Phase | Status |
 |-------------|-------|--------|
 | *(Phase 1 baseline — interactive map, GPX tracks, stats, carousel, tweaks)* | Phase 1 | Complete |
-| MEDIA-01 | Phase 2 | Pending |
-| MEDIA-02 | Phase 2 | Pending |
-| MEDIA-03 | Phase 2 | Pending |
-| DATA-01 | Phase 2 | Pending |
-| DATA-02 | Phase 2 | Pending |
-| DATA-03 | Phase 2 | Pending |
+| MEDIA-01 | Phase 2 | Complete (02-01) |
+| MEDIA-02 | Phase 2 | Complete (02-01) |
+| MEDIA-03 | Phase 2 | Complete (02-01) |
+| DATA-01 | Phase 2 | Complete (02-01) |
+| DATA-02 | Phase 2 | Complete (02-01) |
+| DATA-03 | Phase 2 | Complete (02-01) |
 | SNCK-01 | Phase 3 | Pending |
 | SNCK-02 | Phase 3 | Pending |
 | SNCK-03 | Phase 3 | Pending |
@@ -92,4 +92,4 @@
 
 ---
 *Requirements defined: 2026-05-09*
-*Last updated: 2026-05-09 — Phase 1 marked complete in traceability*
+*Last updated: 2026-05-09 — MEDIA-01/02/03 and DATA-01/02/03 marked complete after plan 02-01*
