@@ -1,0 +1,19 @@
+{
+  "id": "sar",
+  "name": "Via Ogliastra",
+  "year": 2025,
+  "country": "Sardinia, Italy",
+  "hub": [40.3296, 9.705],
+  "blurb": "Seven stages of the Cammino 100 Torri along Sardinia's wild east coast — steep limestone drops to turquoise coves, ancient gorges, and long empty beaches stretching north.",
+  "months": "September 2025",
+  "color": "#866745",
+  "gpx_stages": [
+    "../sardinia/2025-09-10_2567559773_Stage 2_ Santa Maria Navarrese to Golgo Plateau – Via Ogliastra (Cammino 100 Torri).gpx",
+    "../sardinia/2025-09-10_2567560666_Stage 3_ Golgo Plateau to Cala Sisine – Via Ogliastra (Cammino 100 Torri).gpx",
+    "../sardinia/2025-09-10_2567563069_Stage 4_ Cala Sisine to Cala Gonone – Via Ogliastra (Cammino 100 Torri).gpx",
+    "../sardinia/2025-09-10_2567563698_Stage 5_ Cala Gonone to Orosei – Via Ogliastra (Cammino 100 Torri).gpx",
+    "../sardinia/2025-09-10_2567563994_Stage 6_ Orosei to Cala Ginepro – Via Ogliastra (Cammino 100 Torri).gpx",
+    "../sardinia/2025-09-10_2567564304_Stage 7_ Cala Ginepro to Santa Lucia – Via Ogliastra (Cammino 100 Torri).gpx",
+    "../sardinia/2025-09-10_2567564465_Stage 8_ Santa Lucia to Budoni – Via Ogliastra (Cammino 100 Torri).gpx"
+  ]
+}

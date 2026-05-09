@@ -1,0 +1,17 @@
+{
+  "id": "swi",
+  "name": "Engadin & Maloja",
+  "year": 2025,
+  "country": "Switzerland",
+  "hub": [46.4715, 10.1228],
+  "blurb": "From a high traverse above Sarentino into the granite and larch forests of the Engadin — five days of solitude, spectacular passes, and ink-blue alpine lakes.",
+  "months": "May–June 2025",
+  "color": "#b88a4a",
+  "gpx_stages": [
+    "../switzerland/2025-05-14_2241789351_From Valdurna 22, 39058, Sarentino to Dosso 29, 39040, Campo di Trens.gpx",
+    "../switzerland/2025-06-08_2305752760_Pass da Sett da Casaccia – loop tour for the Pass Lunghin.gpx",
+    "../switzerland/2025-06-09_2309113068_Grevasalvas – View over Lake Sils loop from Maloja Posta.gpx",
+    "../switzerland/2025-06-10_2302984386_The Muretto Pass from the Maloggia Pass.gpx",
+    "../switzerland/2025-06-11_2315224728_Lago Bianco To San Carlo.gpx"
+  ]
+}

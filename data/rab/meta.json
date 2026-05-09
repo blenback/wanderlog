@@ -1,0 +1,15 @@
+{
+  "id": "rab",
+  "name": "Rab Island",
+  "year": 2023,
+  "country": "Croatia",
+  "hub": [44.785, 14.7539],
+  "blurb": "Three days on the pine-scented trails of Rab — deserted beaches, the hilltop peak of Misnjak, and ancient stone paths above the bay at Kampor.",
+  "months": "October 2023",
+  "color": "#48604a",
+  "gpx_stages": [
+    "../corsica/2023-10-16_1350952329_Beach Sturič – Beach Sturic loop from Lopar.gpx",
+    "../corsica/2023-10-17_1351677664_Hike to Misnjak.gpx",
+    "../corsica/2023-10-20_1353667168_Wanderung Kalifront – Suha-Punta Beach loop from Kampor.gpx"
+  ]
+}

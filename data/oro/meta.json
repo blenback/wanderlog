@@ -1,0 +1,14 @@
+{
+  "id": "oro",
+  "name": "Alpe Orobie",
+  "year": 2024,
+  "country": "Lombardy, Italy",
+  "hub": [45.9146, 9.6522],
+  "blurb": "High trails above Lake Como in the Bergamo Alps — the summit ridge of Resegone and a long traverse through the wild Orobie valleys.",
+  "months": "June 2024",
+  "color": "#a18258",
+  "gpx_stages": [
+    "../lombardy/2024-06-24_1666973212_Vetta del Resegone dai Piani d'Erna on Trail 1 and 7.gpx",
+    "../lombardy/2024-06-24_1668239066_Orobie.gpx"
+  ]
+}

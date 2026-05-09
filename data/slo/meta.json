@@ -1,0 +1,17 @@
+{
+  "id": "slo",
+  "name": "Slovenia",
+  "year": 2022,
+  "country": "Slovenia",
+  "hub": [46.3649, 14.025],
+  "blurb": "From the Julian Alps to the Bled valley — an emerald summer of mountain huts, glacial rivers, and one incredibly steep trail above Bohinj.",
+  "months": "June & August 2022",
+  "color": "#6f7d52",
+  "gpx_stages": [
+    "../slovenia/2022-06-18_812146577_Slovenia Day 1.gpx",
+    "../slovenia/2022-08-28_905845494_Hike to Grad Kamen.gpx",
+    "../slovenia/2022-08-28_905876981_Ortsmitte sehr schön mit Cafes – Sava River Loop from Bodešče.gpx",
+    "../slovenia/2022-08-29_907157152_View on Bled Castle – Bleder See Runde von Bled.gpx",
+    "../slovenia/2022-08-29_907918563_Incredibly steep trail. – Črno jezero Runde von Ukanc.gpx"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "rue",
+  "name": "Rügen",
+  "year": 2026,
+  "country": "Germany",
+  "hub": [
+    54.5576,
+    13.4897
+  ],
+  "blurb": "Five days on the chalk cliffs of Rügen — beech forests, the dazzling white Königsstuhl, wide beaches, and the twisted trees of Märchenwald.",
+  "months": "May 2026",
+  "color": "#4a7b6a",
+  "gpx_stages": [
+    "../ruegen/2026-05-03_2931636833_View of Sellin Pier – Sellin pier loop from Kreuzeiche.gpx",
+    "../ruegen/2026-05-04_2932731625_Victoria view – View of Wissower Ufer loop from UNESCO-Weltnaturerbe „Alte Buchenwälder Deutschlands“ – Teilgebiet Jasmund.gpx",
+    "../ruegen/2026-05-07_2938404897_View from the Rügen Cliffs – Below the cliffs loop from Dranske.gpx",
+    "../ruegen/2026-05-08_2939822721_Path Through Twisted Trees – Beach at Märchenwald loop from Bakenberg Strand.gpx",
+    "../ruegen/2026-05-09_2942122369_GPX Download_ View of the Jasmunder Bodden – Semper Castle Water Tower Ruin loop from Bobbin.gpx"
+  ]
+}
