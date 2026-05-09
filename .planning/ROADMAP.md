@@ -57,7 +57,10 @@ Plans:
   2. A build script reads all `data/<trip-id>/meta.json` files, parses the referenced GPX files, and regenerates `data.js`
   3. The map renders all 7 trips identically after regenerating `data.js` from GPX sources
   4. Adding a new trip requires only creating `data/<trip-id>/meta.json` (with GPX paths) and running the script — no manual data.js editing
-**Plans**: TBD
+**Plans**: 2 plans
+Plans:
+- [ ] 02.1-01-PLAN.md — create/extend meta.json for all 7 trips with gpx_stages arrays
+- [ ] 02.1-02-PLAN.md — write scripts/build_data.py, run it, verify map renders correctly
 
 ### Phase 3: Trail Snacks Gallery
 **Goal**: Ben and Janna can browse their rated trail snacks on a dedicated gallery page that shares the same design as the map page, with navigation between both pages
@@ -91,6 +94,6 @@ Phases execute in numeric order: 2.1 → 3 → 4
 |-------|----------------|--------|-----------|
 | 1. Core Map App | -/- | Complete | 2026-05-09 |
 | 2. Trip Photos & Notes | 2/2 | Complete | 2026-05-09 |
-| 2.1. GPX Data Pipeline | 0/TBD | Not started | - |
+| 2.1. GPX Data Pipeline | 0/2 | Not started | - |
 | 3. Trail Snacks Gallery | 0/TBD | Not started | - |
 | 4. GitHub Pages Deployment | 0/TBD | Not started | - |
