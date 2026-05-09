@@ -5,14 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-05-09)
 
 **Core value:** The map and snack gallery feel like a living travel scrapbook — easy to add a new trip or snack, looks great, works without a server.
-**Current focus:** Phase 3 — Trail Snacks Gallery
+**Current focus:** Phase 2.1 — GPX Data Pipeline (INSERTED)
 
 ## Current Position
 
-Phase: 2 of 4 (Trip Photos & Notes)
-Plan: 2 of 2 in current phase (02-02 complete)
-Status: Phase 2 complete — all plans done
-Last activity: 2026-05-09 — Plan 02-02 complete; photos added to media/bia/, pipeline fully verified (DATA-01, MEDIA-01, MEDIA-02)
+Phase: 2.1 of 5 (GPX Data Pipeline)
+Plan: 0 of TBD in current phase
+Status: Ready to plan
+Last activity: 2026-05-09 — Phase 2.1 inserted (GPX Data Pipeline) — replaces hardcoded data.js with script-generated output from GPX files
 
 Progress: [█████░░░░░] 50%
 
@@ -43,6 +43,7 @@ Decisions are logged in PROJECT.md Key Decisions table.
 Recent decisions affecting current work:
 
 - Phase 2: meta.json per trip (not extending data.js) — easier to edit one trip without touching the large GPX coordinate file
+- Phase 2.1 (INSERTED): GPX paths in meta.json + build script to regenerate data.js — user wants to remove hardcoded coordinate arrays and derive them from source GPX files
 - Phase 3: Single snacks.json at repo root — flat list, no per-folder complexity needed
 - Phase 4: Deploy from main branch root — zero-config GitHub Pages, no gh-pages branch gymnastics
 - 02-01: closure cancelled flag (not AbortController) for race-condition guard — simpler, equally correct
@@ -68,5 +69,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-05-09
-Stopped at: Phase 2 complete — all plans done (02-01 and 02-02)
-Resume file: None — ready for Phase 3
+Stopped at: Phase 2.1 inserted — ready to plan
+Resume file: None

@@ -17,6 +17,13 @@
 - [x] **DATA-02**: Trip notes from meta.json appear in the stats panel (replacing the hardcoded blurb in data.js)
 - [x] **DATA-03**: Stats panel falls back to the data.js blurb when no meta.json exists
 
+### GPX Data Pipeline
+
+- [ ] **GPX-01**: Each trip's `data/<trip-id>/meta.json` declares the GPX stage files for that trip (e.g., `"gpx_stages": ["stage1.gpx", "stage2.gpx"]`)
+- [ ] **GPX-02**: A build script (e.g., `scripts/build_data.py`) reads all `data/<trip-id>/meta.json` files, parses the referenced GPX files, and writes a new `data.js`
+- [ ] **GPX-03**: The map renders all 7 trips correctly after regenerating `data.js` from GPX sources (tracks, stats, elevation profiles unchanged)
+- [ ] **GPX-04**: Adding a new trip requires only creating `data/<trip-id>/meta.json` with GPX paths and running the build script — no manual `data.js` editing
+
 ### Snack Gallery
 
 - [ ] **SNCK-01**: A `snacks.html` page exists with the same visual design as the map page (fonts, colors, CSS variables)
@@ -71,6 +78,10 @@
 | DATA-01 | Phase 2 | Complete (02-01) |
 | DATA-02 | Phase 2 | Complete (02-01) |
 | DATA-03 | Phase 2 | Complete (02-01) |
+| GPX-01 | Phase 2.1 | Pending |
+| GPX-02 | Phase 2.1 | Pending |
+| GPX-03 | Phase 2.1 | Pending |
+| GPX-04 | Phase 2.1 | Pending |
 | SNCK-01 | Phase 3 | Pending |
 | SNCK-02 | Phase 3 | Pending |
 | SNCK-03 | Phase 3 | Pending |
@@ -85,11 +96,11 @@
 | DEPL-03 | Phase 4 | Pending |
 
 **Coverage:**
-- v1 requirements: 18 total
-- Mapped to phases: 18
+- v1 requirements: 22 total (18 original + 4 GPX pipeline added 2026-05-09)
+- Mapped to phases: 22
 - Unmapped: 0 ✓
 - Phase 1 baseline: Complete (validated 2026-05-09)
 
 ---
 *Requirements defined: 2026-05-09*
-*Last updated: 2026-05-09 — MEDIA-01/02/03 and DATA-01/02/03 marked complete after plan 02-01*
+*Last updated: 2026-05-09 — GPX-01/02/03/04 added for Phase 2.1 (GPX Data Pipeline insertion)*

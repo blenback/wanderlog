@@ -14,6 +14,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Core Map App** - Interactive Leaflet map with 7 trips — already complete
 - [x] **Phase 2: Trip Photos & Notes** - Load real images and meta.json trip notes into the map app
+- [ ] **Phase 2.1: GPX Data Pipeline** (INSERTED) - Replace hardcoded data.js coordinate arrays with a script that generates track data from GPX files referenced in meta.json
 - [ ] **Phase 3: Trail Snacks Gallery** - New snacks.html page with rated snack entries and cross-page navigation
 - [ ] **Phase 4: GitHub Pages Deployment** - Publish the site publicly at blenback.github.io/urlaub
 
@@ -47,9 +48,20 @@ Plans:
 - [x] 02-02-PLAN.md — sample data scaffolding (data/bia/meta.json + media/bia/)
 **UI hint**: yes
 
+### Phase 2.1: GPX Data Pipeline (INSERTED)
+**Goal**: Trip tracks load from individual GPX files specified in meta.json instead of hardcoded coordinate arrays in data.js. Adding a new trip means adding a meta.json with GPX file paths — no manual data.js editing required.
+**Depends on**: Phase 2
+**Requirements**: GPX-01, GPX-02, GPX-03, GPX-04
+**Success Criteria** (what must be TRUE):
+  1. Each trip's meta.json can declare the GPX stage files for that trip (relative paths inside `data/<trip-id>/`)
+  2. A build script reads all `data/<trip-id>/meta.json` files, parses the referenced GPX files, and regenerates `data.js`
+  3. The map renders all 7 trips identically after regenerating `data.js` from GPX sources
+  4. Adding a new trip requires only creating `data/<trip-id>/meta.json` (with GPX paths) and running the script — no manual data.js editing
+**Plans**: TBD
+
 ### Phase 3: Trail Snacks Gallery
 **Goal**: Ben and Janna can browse their rated trail snacks on a dedicated gallery page that shares the same design as the map page, with navigation between both pages
-**Depends on**: Phase 2
+**Depends on**: Phase 2.1
 **Requirements**: SNCK-01, SNCK-02, SNCK-03, SNCK-04, SNCK-05, SNCK-06, SNCK-07, NAV-01, NAV-02
 **Success Criteria** (what must be TRUE):
   1. snacks.html loads and renders a responsive grid of snack cards matching the map page visual style
@@ -73,11 +85,12 @@ Plans:
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 2 → 3 → 4
+Phases execute in numeric order: 2.1 → 3 → 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Core Map App | -/- | Complete | 2026-05-09 |
 | 2. Trip Photos & Notes | 2/2 | Complete | 2026-05-09 |
+| 2.1. GPX Data Pipeline | 0/TBD | Not started | - |
 | 3. Trail Snacks Gallery | 0/TBD | Not started | - |
 | 4. GitHub Pages Deployment | 0/TBD | Not started | - |
