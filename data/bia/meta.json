@@ -1,4 +1,20 @@
 {
+  "id": "bia",
+  "name": "Belle-Ile & Brittany",
+  "year": 2023,
+  "country": "France",
+  "hub": [47.4823, -3.4031],
+  "blurb": "A week on the wild Atlantic coast. Clifftop walking on the GR34 around the Crozon peninsula, then five days circling Belle-Ile-en-Mer on the GR 340.",
+  "months": "May 2023",
+  "color": "#586048",
+  "gpx_stages": [
+    "../brittany/2023-05-28_1139093050_GR34 Roscanvel-Telgruc sur Mer.gpx",
+    "../brittany/2023-05-28_1139096998_BI Stage 1_ Palais to Locmaria – GR 340.gpx",
+    "../brittany/2023-05-28_1139097958_BI Stage 2_ Locmaria to Bangor – GR 340.gpx",
+    "../brittany/2023-05-28_1139098846_BI Stage 3_ Bangor to Port Skeul – GR 340.gpx",
+    "../brittany/2023-05-28_1139099365_BI Stage 4_ Port Skeul to Sauzon – GR 340.gpx",
+    "../brittany/2023-05-28_1139100983_BI Stage 5_ Sauzon to Palais – GR 340.gpx"
+  ],
   "title": "Belle-Ile & Brittany",
   "notes": "A week on the wild Atlantic coast. Clifftop walking on the GR34 around the Crozon peninsula, then five days circling Belle-Ile-en-Mer on the GR 340. The western cliffs of Belle-Ile in evening light are the kind of view that stays with you.",
   "photos": [
