@@ -10,9 +10,9 @@ See: .planning/PROJECT.md (updated 2026-05-09)
 ## Current Position
 
 Phase: 2 of 4 (Trip Photos & Notes)
-Plan: 1 of 2 in current phase (02-01 complete)
-Status: In progress
-Last activity: 2026-05-09 — Plan 02-01 complete (meta fetch pipeline + PhotoCarousel real-image mode)
+Plan: 2 of 2 in current phase (02-02 in progress — paused at human checkpoint)
+Status: In progress — awaiting human action (add photos to media/bia/)
+Last activity: 2026-05-09 — Plan 02-02 Task 1 complete (data/bia/meta.json created); paused at checkpoint for photo addition
 
 Progress: [███░░░░░░░] 37%
 
@@ -55,7 +55,7 @@ None yet.
 
 ### Blockers/Concerns
 
-- Phase 2: No real photos or meta.json files exist yet — they need to be created/added to repo before the carousel can render real images
+- Phase 2: data/bia/meta.json now exists; media/bia/ directory created but photos (001-clifftop.jpg, 002-village.jpg) still need to be added by developer before carousel can render real images
 - Phase 4: Asset paths under /urlaub sub-path must be verified before deployment (CDN links are absolute, local file refs may need attention)
 
 ## Deferred Items
@@ -69,5 +69,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-05-09
-Stopped at: Plan 02-01 complete — meta fetch pipeline + PhotoCarousel real-image mode
-Resume file: .planning/02-trip-photos-notes/02-02-PLAN.md
+Stopped at: Plan 02-02 Task 1 complete — data/bia/meta.json created; paused at checkpoint:human-verify (Task 2)
+Resume file: .planning/02-trip-photos-notes/02-02-PLAN.md (resume after adding photos to media/bia/)
