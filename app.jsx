@@ -49,7 +49,7 @@ function markerHtml(trip) {
 
 // ─── HEADER ─────────────────────────────────────────────────────────────
 
-function Header({ tweaks, totalKm, totalElev, activeTrip, onHome }) {
+function Header({ tweaks, totalKm, totalElev, activeTrip, meta, onHome }) {
   return (
     <header className="ta-header">
       <div className="ta-brand" onClick={onHome} style={{ cursor: activeTrip ? 'pointer' : 'default' }}>
@@ -57,7 +57,7 @@ function Header({ tweaks, totalKm, totalElev, activeTrip, onHome }) {
           <div className="ta-brand-title">{tweaks.title}</div>
           <div className="ta-brand-sub">
             {activeTrip
-              ? <span><span className="ta-brand-sub-em">{activeTrip.name}</span> · {activeTrip.country} · {activeTrip.months}</span>
+              ? <span><span className="ta-brand-sub-em">{(meta && meta.title) || activeTrip.name}</span> · {activeTrip.country} · {activeTrip.months}</span>
               : <span>{tweaks.subtitle} · <span className="ta-brand-sub-em">{totalKm.toLocaleString()} km</span> on the trail · {totalElev.toLocaleString()} m climbed · {window.TRIPS.length} trips</span>
             }
           </div>
@@ -77,7 +77,7 @@ function Header({ tweaks, totalKm, totalElev, activeTrip, onHome }) {
 
 // ─── TRIP STATS PANEL ───────────────────────────────────────────────────
 
-function StatsPanel({ trip, showElevation }) {
+function StatsPanel({ trip, showElevation, meta }) {
   const elevationProfile = useMemo(() => {
     if (!showElevation) return null;
     const all = trip.allPoints.map(p => p[2]);
@@ -98,11 +98,11 @@ function StatsPanel({ trip, showElevation }) {
     <aside className="ta-stats">
       <div className="ta-stats-head">
         <div className="ta-stats-overline">Trip log</div>
-        <div className="ta-stats-title">{trip.name}</div>
+        <div className="ta-stats-title">{(meta && meta.title) || trip.name}</div>
         <div className="ta-stats-sub">{trip.country} · {trip.months}</div>
       </div>
 
-      <p className="ta-stats-blurb">{trip.blurb}</p>
+      <p className="ta-stats-blurb">{(meta && meta.notes) || trip.blurb}</p>
 
       <div className="ta-stats-grid">
         <div className="ta-stat">
@@ -380,6 +380,27 @@ function App() {
   const [tweaks, setTweak] = useTweaks(TWEAK_DEFAULTS);
   const [activeTripId, setActiveTripId] = useState(null);
   const activeTrip = activeTripId ? window.TRIPS.find(t => t.id === activeTripId) : null;
+  const [meta, setMeta] = useState(null);
+
+  useEffect(() => {
+    if (!activeTripId) {
+      setMeta(null);
+      return;
+    }
+    let cancelled = false;
+    fetch(`data/${activeTripId}/meta.json`)
+      .then(r => {
+        if (!r.ok) return null;
+        return r.json();
+      })
+      .then(data => {
+        if (!cancelled) setMeta(data || null);
+      })
+      .catch(() => {
+        if (!cancelled) setMeta(null);
+      });
+    return () => { cancelled = true; };
+  }, [activeTripId]);
 
   useEffect(() => {
     const h = (e) => { if (e.key === 'Escape') setActiveTripId(null); };
@@ -394,6 +415,7 @@ function App() {
         totalKm={window.totalDistance}
         totalElev={window.totalElevation}
         activeTrip={activeTrip}
+        meta={meta}
         onHome={() => setActiveTripId(null)}
       />
 
@@ -405,8 +427,8 @@ function App() {
 
       {activeTrip &&
         <>
-          <StatsPanel trip={activeTrip} showElevation={tweaks.showElevation} />
-          <PhotoCarousel trip={activeTrip} />
+          <StatsPanel trip={activeTrip} showElevation={tweaks.showElevation} meta={meta} />
+          <PhotoCarousel trip={activeTrip} meta={meta} />
         </>
       }
 
