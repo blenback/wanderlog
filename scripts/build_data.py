@@ -9,7 +9,12 @@ Run from repo root.
 
 import json
 import os
+import sys
 import xml.etree.ElementTree as ET
+
+# Ensure stdout handles Unicode filenames on Windows (cp1252 console fails on non-Latin chars)
+if sys.stdout.encoding and sys.stdout.encoding.lower() not in ('utf-8', 'utf-8-sig'):
+    sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 
 # Paths relative to script location
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
