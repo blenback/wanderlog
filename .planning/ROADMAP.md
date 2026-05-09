@@ -13,7 +13,7 @@ The interactive map app is already live with 7 real trips. Three phases of activ
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Core Map App** - Interactive Leaflet map with 7 trips — already complete
-- [ ] **Phase 2: Trip Photos & Notes** - Load real images and meta.json trip notes into the map app
+- [x] **Phase 2: Trip Photos & Notes** - Load real images and meta.json trip notes into the map app
 - [ ] **Phase 3: Trail Snacks Gallery** - New snacks.html page with rated snack entries and cross-page navigation
 - [ ] **Phase 4: GitHub Pages Deployment** - Publish the site publicly at blenback.github.io/urlaub
 
@@ -44,7 +44,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 2 plans
 Plans:
 - [x] 02-01-PLAN.md — app.jsx meta fetch pipeline and PhotoCarousel real-image mode
-- [ ] 02-02-PLAN.md — sample data scaffolding (data/bia/meta.json + media/bia/)
+- [x] 02-02-PLAN.md — sample data scaffolding (data/bia/meta.json + media/bia/)
 **UI hint**: yes
 
 ### Phase 3: Trail Snacks Gallery
@@ -78,6 +78,6 @@ Phases execute in numeric order: 2 → 3 → 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Core Map App | -/- | Complete | 2026-05-09 |
-| 2. Trip Photos & Notes | 1/2 | In progress | - |
+| 2. Trip Photos & Notes | 2/2 | Complete | 2026-05-09 |
 | 3. Trail Snacks Gallery | 0/TBD | Not started | - |
 | 4. GitHub Pages Deployment | 0/TBD | Not started | - |

@@ -5,7 +5,7 @@
 See: .planning/PROJECT.md (updated 2026-05-09)
 
 **Core value:** The map and snack gallery feel like a living travel scrapbook — easy to add a new trip or snack, looks great, works without a server.
-**Current focus:** Phase 2 — Trip Photos & Notes
+**Current focus:** Phase 3 — Trail Snacks Gallery
 
 ## Current Position
 
