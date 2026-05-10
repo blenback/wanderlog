@@ -1,19 +1,7 @@
 // Main app — map overview + trip detail. Uses Leaflet for the map and
 // React for the UI overlay.
 
-const { useState, useEffect, useMemo, useRef, useCallback } = React;
-
-// ─── TWEAK DEFAULTS ─────────────────────────────────────────────────────
-const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
-  "title": "WANDERLOG",
-  "subtitle": "Memories from Ben & Janna's adventures",
-  "mapTheme": "voyager",
-  "trackColor": "#586048",
-  "showElevation": true
-} /*EDITMODE-END*/;
-
-const TITLE_OPTIONS = ["WANDERLOG", "TRAIL ATLAS", "BOOTPRINTS", "TWO BOOTS"];
-const THEME_OPTIONS = ["voyager", "positron", "watercolor"];
+const { useState, useEffect, useMemo, useRef } = React;
 
 // ─── LEAFLET TILE SOURCES ───────────────────────────────────────────────
 
@@ -49,16 +37,16 @@ function markerHtml(trip) {
 
 // ─── HEADER ─────────────────────────────────────────────────────────────
 
-function Header({ tweaks, totalKm, totalElev, activeTrip, meta, onHome }) {
+function Header({ totalKm, totalElev, activeTrip, meta, onHome }) {
   return (
     <header className="ta-header">
       <div className="ta-brand" onClick={onHome} style={{ cursor: activeTrip ? 'pointer' : 'default' }}>
         <div className="ta-brand-text">
-          <div className="ta-brand-title">{tweaks.title}</div>
+          <div className="ta-brand-title">WANDERLOG</div>
           <div className="ta-brand-sub">
             {activeTrip
               ? <span><span className="ta-brand-sub-em">{(meta && meta.title) || activeTrip.name}</span> · {activeTrip.country} · {activeTrip.months}</span>
-              : <span>{tweaks.subtitle} · <span className="ta-brand-sub-em">{totalKm.toLocaleString()} km</span> on the trail · {totalElev.toLocaleString()} m climbed · {window.TRIPS.length} trips</span>
+              : <span>Memories from Ben &amp; Janna's adventures · <span className="ta-brand-sub-em">{totalKm.toLocaleString()} km</span> on the trail · {totalElev.toLocaleString()} m climbed · {window.TRIPS.length} trips</span>
             }
           </div>
         </div>
@@ -77,9 +65,8 @@ function Header({ tweaks, totalKm, totalElev, activeTrip, meta, onHome }) {
 
 // ─── TRIP STATS PANEL ───────────────────────────────────────────────────
 
-function StatsPanel({ trip, showElevation, meta }) {
+function StatsPanel({ trip, meta }) {
   const elevationProfile = useMemo(() => {
-    if (!showElevation) return null;
     const all = trip.allPoints.map(p => p[2]);
     const w = 320, h = 90;
     const max = Math.max(...all);
@@ -92,7 +79,7 @@ function StatsPanel({ trip, showElevation, meta }) {
     });
     const path = `M 0,${h} L ${pts.join(' L ')} L ${w},${h} Z`;
     return { path, w, h, max, min };
-  }, [trip, showElevation]);
+  }, [trip]);
 
   return (
     <aside className="ta-stats">
@@ -297,7 +284,7 @@ function PhotoPlaceholder({ trip, photo, index }) {
 
 // ─── MAP ────────────────────────────────────────────────────────────────
 
-function MapView({ tweaks, activeTrip, onSelectTrip }) {
+function MapView({ activeTrip, onSelectTrip }) {
   const mapRef = useRef(null);
   const mapElRef = useRef(null);
   const layerRefs = useRef({ markers: [], tracks: [], stageLabels: [] });
@@ -322,15 +309,15 @@ function MapView({ tweaks, activeTrip, onSelectTrip }) {
   useEffect(() => {
     if (!mapRef.current) return;
     if (tileRef.current) tileRef.current.remove();
-    const cfg = TILE_URLS[tweaks.mapTheme] || TILE_URLS.voyager;
+    const cfg = TILE_URLS.voyager;
     tileRef.current = L.tileLayer(cfg.url, {
       subdomains: cfg.sub,
       attribution: cfg.attribution,
       maxZoom: 19,
       crossOrigin: true
     }).addTo(mapRef.current);
-    mapElRef.current.dataset.theme = tweaks.mapTheme;
-  }, [tweaks.mapTheme]);
+    mapElRef.current.dataset.theme = 'voyager';
+  }, []);
 
   useEffect(() => {
     if (!mapRef.current) return;
@@ -371,10 +358,9 @@ function MapView({ tweaks, activeTrip, onSelectTrip }) {
         lineCap: 'round', lineJoin: 'round'
       }).addTo(mapRef.current);
       const line = L.polyline(latlngs, {
-        color: tweaks.trackColor,
+        color: '#586048',
         weight: 3.5, opacity: 1,
-        lineCap: 'round', lineJoin: 'round',
-        dashArray: i % 2 ? '1 6' : null
+        lineCap: 'round', lineJoin: 'round'
       }).addTo(mapRef.current);
       layerRefs.current.tracks.push(halo, line);
 
@@ -416,7 +402,7 @@ function MapView({ tweaks, activeTrip, onSelectTrip }) {
       paddingTopLeft: [20, 100],
       maxZoom: 12
     });
-  }, [activeTrip, tweaks.trackColor]);
+  }, [activeTrip]);
 
   return <div ref={mapElRef} className="ta-map" />;
 }
@@ -424,7 +410,6 @@ function MapView({ tweaks, activeTrip, onSelectTrip }) {
 // ─── APP ────────────────────────────────────────────────────────────────
 
 function App() {
-  const [tweaks, setTweak] = useTweaks(TWEAK_DEFAULTS);
   const [activeTripId, setActiveTripId] = useState(null);
   const activeTrip = activeTripId ? window.TRIPS.find(t => t.id === activeTripId) : null;
   const [meta, setMeta] = useState(null);
@@ -458,7 +443,6 @@ function App() {
   return (
     <div className="ta-app" data-active={activeTrip ? 'true' : 'false'}>
       <Header
-        tweaks={tweaks}
         totalKm={window.totalDistance}
         totalElev={window.totalElevation}
         activeTrip={activeTrip}
@@ -467,54 +451,16 @@ function App() {
       />
 
       <MapView
-        tweaks={tweaks}
         activeTrip={activeTrip}
         onSelectTrip={t => setActiveTripId(t.id)}
       />
 
       {activeTrip &&
         <>
-          <StatsPanel trip={activeTrip} showElevation={tweaks.showElevation} meta={meta} />
+          <StatsPanel trip={activeTrip} meta={meta} />
           <PhotoCarousel trip={activeTrip} meta={meta} />
         </>
       }
-
-      <TweaksPanel title="Tweaks">
-        <TweakSection label="Identity">
-          <TweakRadio
-            label="Title"
-            value={tweaks.title}
-            onChange={v => setTweak('title', v)}
-            options={TITLE_OPTIONS}
-          />
-          <TweakText
-            label="Subtitle"
-            value={tweaks.subtitle}
-            onChange={v => setTweak('subtitle', v)}
-          />
-        </TweakSection>
-        <TweakSection label="Map">
-          <TweakRadio
-            label="Tile theme"
-            value={tweaks.mapTheme}
-            onChange={v => setTweak('mapTheme', v)}
-            options={THEME_OPTIONS}
-          />
-          <TweakColor
-            label="Track colour"
-            value={tweaks.trackColor}
-            onChange={v => setTweak('trackColor', v)}
-            options={['#586048', '#866745', '#222222', '#FFC806']}
-          />
-        </TweakSection>
-        <TweakSection label="Trip detail">
-          <TweakToggle
-            label="Show elevation profile"
-            value={tweaks.showElevation}
-            onChange={v => setTweak('showElevation', v)}
-          />
-        </TweakSection>
-      </TweaksPanel>
     </div>
   );
 }
