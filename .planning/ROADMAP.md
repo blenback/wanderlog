@@ -14,7 +14,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Core Map App** - Interactive Leaflet map with 7 trips — already complete
 - [x] **Phase 2: Trip Photos & Notes** - Load real images and meta.json trip notes into the map app
-- [ ] **Phase 2.1: GPX Data Pipeline** (INSERTED) - Replace hardcoded data.js coordinate arrays with a script that generates track data from GPX files referenced in meta.json
+- [x] **Phase 2.1: GPX Data Pipeline** (INSERTED) - Replace hardcoded data.js coordinate arrays with a script that generates track data from GPX files referenced in meta.json
 - [ ] **Phase 3: Trail Snacks Gallery** - New snacks.html page with rated snack entries and cross-page navigation
 - [ ] **Phase 4: GitHub Pages Deployment** - Publish the site publicly at blenback.github.io/urlaub
 
@@ -60,7 +60,7 @@ Plans:
 **Plans**: 2 plans
 Plans:
 - [x] 02.1-01-PLAN.md — create/extend meta.json for all 7 trips with gpx_stages arrays
-- [ ] 02.1-02-PLAN.md — write scripts/build_data.py, run it, verify map renders correctly
+- [x] 02.1-02-PLAN.md — write scripts/build_data.py, run it, verify map renders correctly
 
 ### Phase 3: Trail Snacks Gallery
 **Goal**: Ben and Janna can browse their rated trail snacks on a dedicated gallery page that shares the same design as the map page, with navigation between both pages
@@ -94,6 +94,6 @@ Phases execute in numeric order: 2.1 → 3 → 4
 |-------|----------------|--------|-----------|
 | 1. Core Map App | -/- | Complete | 2026-05-09 |
 | 2. Trip Photos & Notes | 2/2 | Complete | 2026-05-09 |
-| 2.1. GPX Data Pipeline | 1/2 | In progress | - |
+| 2.1. GPX Data Pipeline | 2/2 | Complete | 2026-05-09 |
 | 3. Trail Snacks Gallery | 0/TBD | Not started | - |
 | 4. GitHub Pages Deployment | 0/TBD | Not started | - |
