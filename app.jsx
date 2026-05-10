@@ -172,17 +172,42 @@ function PhotoItem({ trip, photo, index, isActive, onClick }) {
             />
         }
       </div>
-      <div className="ta-photo-caption">
-        <span className="ta-photo-cap">{photo.caption}</span>
-      </div>
+    </div>
+  );
+}
+
+function Lightbox({ src, alt, onClose }) {
+  useEffect(() => {
+    const handler = (e) => { if (e.key === 'Escape') onClose(); };
+    document.addEventListener('keydown', handler);
+    return () => document.removeEventListener('keydown', handler);
+  }, [onClose]);
+  return (
+    <div className="ta-lightbox-overlay" onClick={onClose}>
+      <button className="ta-lightbox-close" onClick={onClose} aria-label="Close">×</button>
+      <img className="ta-lightbox-img" src={src} alt={alt} onClick={(e) => e.stopPropagation()} />
     </div>
   );
 }
 
 function PhotoCarousel({ trip, meta }) {
   const [idx, setIdx] = useState(0);
+  const [expanded, setExpanded] = useState(false);
+  const [lightbox, setLightbox] = useState(null);
+  const carouselRef = useRef(null);
 
   useEffect(() => { setIdx(0); }, [trip.id]);
+
+  useEffect(() => {
+    if (!expanded) return;
+    const handler = (e) => {
+      if (carouselRef.current && !carouselRef.current.contains(e.target)) {
+        setExpanded(false);
+      }
+    };
+    document.addEventListener('mousedown', handler);
+    return () => document.removeEventListener('mousedown', handler);
+  }, [expanded]);
 
   const placeholderPhotos = useMemo(() => {
     const captions = [
@@ -210,16 +235,14 @@ function PhotoCarousel({ trip, meta }) {
 
   const visible = 5;
   return (
-    <div className="ta-carousel">
+    <div
+      ref={carouselRef}
+      className={`ta-carousel${expanded ? ' is-expanded' : ''}`}
+      onClick={() => !expanded && setExpanded(true)}
+    >
       <div className="ta-carousel-head">
         <div>
           <div className="ta-carousel-overline">Field notes</div>
-          <div className="ta-carousel-title">
-            {hasRealPhotos
-              ? `${photos.length} photos`
-              : `${photos.length} photos · drop real images into media/${trip.id}/ to replace`
-            }
-          </div>
         </div>
         <div className="ta-carousel-controls">
           <button onClick={() => setIdx(Math.max(0, idx - 1))} disabled={idx === 0} aria-label="Previous">←</button>
@@ -237,21 +260,21 @@ function PhotoCarousel({ trip, meta }) {
                   photo={photo}
                   index={i}
                   isActive={i === idx}
-                  onClick={() => setIdx(i)}
+                  onClick={() => {
+                    setIdx(i);
+                    setLightbox({ src: `media/${trip.id}/${photo.filename}`, alt: photo.caption || '' });
+                  }}
                 />
               )
             : photos.map((p, i) =>
                 <div key={p.id} className={`ta-photo ${i === idx ? 'is-active' : ''}`} onClick={() => setIdx(i)}>
                   <PhotoPlaceholder trip={trip} photo={p} index={i} />
-                  <div className="ta-photo-caption">
-                    <span className="ta-photo-stage">stage {p.stage}</span>
-                    <span className="ta-photo-cap">{p.caption}</span>
-                  </div>
                 </div>
               )
           }
         </div>
       </div>
+      {lightbox && <Lightbox src={lightbox.src} alt={lightbox.alt} onClose={() => setLightbox(null)} />}
     </div>
   );
 }
@@ -325,14 +348,37 @@ function MapView({ activeTrip, onSelectTrip }) {
     layerRefs.current.markers = [];
     if (activeTrip) return;
 
-    window.TRIPS.forEach(trip => {
+    const MIN_DIST = 108;
+    const ITERATIONS = 30;
+    const positions = window.TRIPS.map(trip => {
+      const pt = mapRef.current.latLngToLayerPoint(L.latLng(trip.hub));
+      return { x: pt.x, y: pt.y, trip };
+    });
+    for (let iter = 0; iter < ITERATIONS; iter++) {
+      for (let a = 0; a < positions.length; a++) {
+        for (let b = a + 1; b < positions.length; b++) {
+          const dx = positions[b].x - positions[a].x;
+          const dy = positions[b].y - positions[a].y;
+          const dist = Math.sqrt(dx * dx + dy * dy) || 0.1;
+          if (dist < MIN_DIST) {
+            const push = (MIN_DIST - dist) * 0.5;
+            const nx = (dx / dist) * push * 0.5;
+            const ny = (dy / dist) * push * 0.5;
+            positions[a].x -= nx; positions[a].y -= ny;
+            positions[b].x += nx; positions[b].y += ny;
+          }
+        }
+      }
+    }
+    positions.forEach(({ x, y, trip }) => {
+      const latlng = mapRef.current.layerPointToLatLng(L.point(x, y));
       const icon = L.divIcon({
         html: markerHtml(trip),
         className: 'trip-marker-wrap',
-        iconSize: [120, 120],
-        iconAnchor: [60, 60]
+        iconSize: [100, 100],
+        iconAnchor: [50, 50]
       });
-      const marker = L.marker(trip.hub, { icon }).addTo(mapRef.current);
+      const marker = L.marker(latlng, { icon }).addTo(mapRef.current);
       marker.on('click', () => onSelectTrip(trip));
       layerRefs.current.markers.push(marker);
     });
