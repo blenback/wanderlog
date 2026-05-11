@@ -1,0 +1,34 @@
+[
+  {
+    "id": "knusperbrot",
+    "name": "Knusperbrot Bergkräuter",
+    "country": "Austria",
+    "photo": "knusperbrot.jpg",
+    "ben": { "score": 9, "note": "Perfect crunch-to-weight ratio, herby enough to feel fancy." },
+    "janna": { "score": 8, "note": "Could eat a whole packet before the col, no regrets." }
+  },
+  {
+    "id": "fig-roll",
+    "name": "Fig Roll",
+    "country": "United Kingdom",
+    "photo": "fig-roll.jpg",
+    "ben": { "score": 6, "note": "Decent fig paste but the pastry gets soggy in a jersey pocket." },
+    "janna": { "score": 8, "note": "Classic, reliable, and somehow always the right call at 1500 m." }
+  },
+  {
+    "id": "haribo-goldbears",
+    "name": "Haribo Goldbären",
+    "country": "Germany",
+    "photo": "haribo-goldbears.jpg",
+    "ben": { "score": 7, "note": "Sugar hits fast, a handful on the descent is basically medical." },
+    "janna": { "score": 6, "note": "Gets welded together in summer heat — peel apart and eat anyway." }
+  },
+  {
+    "id": "garibaldi",
+    "name": "Garibaldi Biscuit",
+    "country": "Italy",
+    "photo": "garibaldi.jpg",
+    "ben": { "score": 5, "note": "Dry and crumbly, fine but not exciting." },
+    "janna": { "score": 5, "note": "More of an emergency snack than a treat." }
+  }
+]

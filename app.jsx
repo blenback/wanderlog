@@ -58,6 +58,9 @@ function Header({ totalKm, totalElev, activeTrip, meta, onHome }) {
             <span aria-hidden>←</span> All trips
           </button>
         }
+        <a href="snacks.html" className="ta-nav-back">
+          Trail Snacks <span aria-hidden>→</span>
+        </a>
       </nav>
     </header>
   );
