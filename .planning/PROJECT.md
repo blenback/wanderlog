@@ -2,7 +2,7 @@
 
 ## What This Is
 
-A personal hiking memories website for Ben and Janna — an interactive Leaflet map showing all their hiking trips with real GPX tracks, trip notes, and photos, plus a separate Trail Snacks gallery page where they rate and review trail snacks they've eaten. Deployed as a static site on GitHub Pages at `blenback.github.io/urlaub`.
+A personal hiking memories website for Ben and Janna — an interactive Leaflet map showing all their hiking trips with real GPX tracks, trip notes, and photos, plus a separate Trail Snacks gallery page where they rate and review trail snacks they've eaten. Deployed as a static site on GitHub Pages at `blenback.github.io/wanderlog`.
 
 ## Core Value
 
@@ -34,7 +34,7 @@ A personal hiking memories website for Ben and Janna — an interactive Leaflet 
 - [ ] Snack data stored in `snacks.json` at repo root — easy to add new entries by editing the file
 - [ ] Snack photos stored in `media/snacks/<snack-id>.jpg`
 - [ ] Navigation between map page and snacks page (link/button in header of each)
-- [ ] GitHub Pages deployment from `main` branch root → `blenback.github.io/urlaub`
+- [ ] GitHub Pages deployment from `main` branch root → `blenback.github.io/wanderlog`
 
 ### Out of Scope
 
@@ -48,7 +48,7 @@ A personal hiking memories website for Ben and Janna — an interactive Leaflet 
 ## Context
 
 - **Existing codebase**: 4 source files (index.html, app.jsx, data.js, tweaks-panel.jsx) + 35 GPX files in `data/` across 7 trip folders
-- **GitHub remote**: `https://github.com/blenback/urlaub.git` — GitHub Pages will serve from main branch root
+- **GitHub remote**: `https://github.com/blenback/wanderlog.git` — GitHub Pages will serve from main branch root
 - **Tech constraint**: No build step — all JS served as raw files via CDN React (UMD) + Babel standalone. New pages must follow the same pattern.
 - **Photo storage**: `media/<trip-id>/` folders in repo (already referenced in placeholder code). Snack photos in `media/snacks/`
 - **Data files**: `data/<trip-id>/meta.json` per trip (notes, photo list); `snacks.json` at root for snack gallery

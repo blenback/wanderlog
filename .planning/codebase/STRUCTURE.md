@@ -5,7 +5,7 @@
 ## Directory Layout
 
 ```
-urlaub/                         # Project root — also the web root
+wanderlog/                         # Project root — also the web root
 ├── index.html                  # Single HTML entry point; all CSS inlined; script load order
 ├── app.jsx                     # React application (Babel-transpiled in browser)
 ├── tweaks-panel.jsx            # Generic tweaks shell + controls (Babel-transpiled in browser)

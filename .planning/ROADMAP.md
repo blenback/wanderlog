@@ -16,7 +16,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 2: Trip Photos & Notes** - Load real images and meta.json trip notes into the map app
 - [x] **Phase 2.1: GPX Data Pipeline** (INSERTED) - Replace hardcoded data.js coordinate arrays with a script that generates track data from GPX files referenced in meta.json
 - [x] **Phase 3: Trail Snacks Gallery** - New snacks.html page with rated snack entries and cross-page navigation
-- [x] **Phase 4: GitHub Pages Deployment** - Publish the site publicly at blenback.github.io/urlaub
+- [x] **Phase 4: GitHub Pages Deployment** - Publish the site publicly at blenback.github.io/wanderlog
 
 ## Phase Details
 
@@ -79,13 +79,13 @@ Plans:
 **UI hint**: yes
 
 ### Phase 4: GitHub Pages Deployment
-**Goal**: The site is publicly accessible at blenback.github.io/urlaub with all assets loading correctly under the /urlaub sub-path
+**Goal**: The site is publicly accessible at blenback.github.io/wanderlog with all assets loading correctly under the /wanderlog sub-path
 **Depends on**: Phase 3
 **Requirements**: DEPL-01, DEPL-02, DEPL-03
 **Success Criteria** (what must be TRUE):
-  1. GitHub Pages is enabled on the blenback/urlaub repo serving from the main branch root
-  2. The site loads without errors at https://blenback.github.io/urlaub
-  3. All assets (GPX data, photos, fonts, CDN scripts) load without broken links under the /urlaub sub-path
+  1. GitHub Pages is enabled on the blenback/wanderlog repo serving from the main branch root
+  2. The site loads without errors at https://blenback.github.io/wanderlog
+  3. All assets (GPX data, photos, fonts, CDN scripts) load without broken links under the /wanderlog sub-path
 **Plans**: 1 plan
 Plans:
 - [x] 04-01-PLAN.md — push main to GitHub, enable Pages from repo settings, verify

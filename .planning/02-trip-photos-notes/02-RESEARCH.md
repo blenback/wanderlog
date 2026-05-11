@@ -322,9 +322,9 @@ All fields optional. A valid meta.json with an empty `photos` array triggers pla
 
 ### Pitfall 4: fetch() Relative Path Works Locally But Breaks on GitHub Pages
 
-**What goes wrong:** `fetch('data/bia/meta.json')` works fine when opened as `file://` or served from root, but fails under the `/urlaub` sub-path on GitHub Pages.
+**What goes wrong:** `fetch('data/bia/meta.json')` works fine when opened as `file://` or served from root, but fails under the `/wanderlog` sub-path on GitHub Pages.
 
-**Why it happens:** Relative paths resolve relative to the current document URL. When the page is at `https://blenback.github.io/urlaub/`, the relative path `data/bia/meta.json` correctly resolves to `https://blenback.github.io/urlaub/data/bia/meta.json`. This is correct behavior.
+**Why it happens:** Relative paths resolve relative to the current document URL. When the page is at `https://blenback.github.io/wanderlog/`, the relative path `data/bia/meta.json` correctly resolves to `https://blenback.github.io/wanderlog/data/bia/meta.json`. This is correct behavior.
 
 **How to avoid:** Keep the relative path as-is — it will work correctly on GitHub Pages because it's relative to the document, not the origin root. Do NOT use absolute paths like `/data/bia/meta.json` — that would resolve to `blenback.github.io/data/...` and break under the sub-path. [ASSUMED — GitHub Pages sub-path behavior deduction from standard URL resolution spec; mark for verification in Phase 4]
 
@@ -491,7 +491,7 @@ This is a static personal site with no authentication, no user input, and no ser
 
 | # | Claim | Section | Risk if Wrong |
 |---|-------|---------|---------------|
-| A1 | Relative `fetch('data/{trip-id}/meta.json')` paths resolve correctly under the `/urlaub` GitHub Pages sub-path | Common Pitfalls #4 | Meta.json fetches would 404 on production; would need absolute path prefix or base-href strategy |
+| A1 | Relative `fetch('data/{trip-id}/meta.json')` paths resolve correctly under the `/wanderlog` GitHub Pages sub-path | Common Pitfalls #4 | Meta.json fetches would 404 on production; would need absolute path prefix or base-href strategy |
 
 ---
 

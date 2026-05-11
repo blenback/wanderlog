@@ -41,9 +41,9 @@
 
 ### Deployment
 
-- [ ] **DEPL-01**: GitHub Pages is enabled on `blenback/urlaub`, serving from the main branch root
-- [ ] **DEPL-02**: Site is publicly accessible at `https://blenback.github.io/urlaub`
-- [ ] **DEPL-03**: All asset paths work correctly under the `/urlaub` sub-path (no broken links)
+- [ ] **DEPL-01**: GitHub Pages is enabled on `blenback/wanderlog`, serving from the main branch root
+- [ ] **DEPL-02**: Site is publicly accessible at `https://blenback.github.io/wanderlog`
+- [ ] **DEPL-03**: All asset paths work correctly under the `/wanderlog` sub-path (no broken links)
 
 ## v2 Requirements
 

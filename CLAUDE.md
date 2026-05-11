@@ -2,7 +2,7 @@
 
 ## What This Is
 
-A personal hiking memories website for Ben and Janna. Interactive Leaflet map with real GPX tracks, trip notes, and photos. Separate Trail Snacks gallery page with rated snack entries. Deployed as a static site on GitHub Pages at `blenback.github.io/urlaub`.
+A personal hiking memories website for Ben and Janna. Interactive Leaflet map with real GPX tracks, trip notes, and photos. Separate Trail Snacks gallery page with rated snack entries. Deployed as a static site on GitHub Pages at `blenback.github.io/wanderlog`.
 
 ## Tech Stack
 

@@ -11,7 +11,7 @@ See: .planning/PROJECT.md (updated 2026-05-09)
 
 Phase: Complete — all 4 phases done
 Plan: 1/1 in Phase 4
-Status: v1 complete — site live at https://blenback.github.io/urlaub
+Status: v1 complete — site live at https://blenback.github.io/wanderlog
 Last activity: 2026-05-11 — Phase 4 complete — GitHub Pages enabled, deploying from main branch root
 
 Progress: [██████████] 100%
@@ -59,7 +59,7 @@ None yet.
 
 ### Blockers/Concerns
 
-- Phase 4: Asset paths under /urlaub sub-path must be verified before deployment (CDN links are absolute, local file refs may need attention)
+- Phase 4: Asset paths under /wanderlog sub-path must be verified before deployment (CDN links are absolute, local file refs may need attention)
 
 ## Deferred Items
 
