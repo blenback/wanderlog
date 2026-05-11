@@ -9,12 +9,12 @@ See: .planning/PROJECT.md (updated 2026-05-09)
 
 ## Current Position
 
-Phase: 4 of 5 (GitHub Pages Deployment)
-Plan: 0 of TBD in current phase
-Status: Ready — Phase 3 complete
-Last activity: 2026-05-11 — Phase 3 complete — snacks.html + snacks.jsx gallery, snacks.json sample data, nav links wired
+Phase: Complete — all 4 phases done
+Plan: 1/1 in Phase 4
+Status: v1 complete — site live at https://blenback.github.io/urlaub
+Last activity: 2026-05-11 — Phase 4 complete — GitHub Pages enabled, deploying from main branch root
 
-Progress: [████████░░] 80%
+Progress: [██████████] 100%
 
 ## Performance Metrics
 

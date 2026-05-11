@@ -16,7 +16,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 2: Trip Photos & Notes** - Load real images and meta.json trip notes into the map app
 - [x] **Phase 2.1: GPX Data Pipeline** (INSERTED) - Replace hardcoded data.js coordinate arrays with a script that generates track data from GPX files referenced in meta.json
 - [x] **Phase 3: Trail Snacks Gallery** - New snacks.html page with rated snack entries and cross-page navigation
-- [ ] **Phase 4: GitHub Pages Deployment** - Publish the site publicly at blenback.github.io/urlaub
+- [x] **Phase 4: GitHub Pages Deployment** - Publish the site publicly at blenback.github.io/urlaub
 
 ## Phase Details
 
@@ -86,7 +86,9 @@ Plans:
   1. GitHub Pages is enabled on the blenback/urlaub repo serving from the main branch root
   2. The site loads without errors at https://blenback.github.io/urlaub
   3. All assets (GPX data, photos, fonts, CDN scripts) load without broken links under the /urlaub sub-path
-**Plans**: TBD
+**Plans**: 1 plan
+Plans:
+- [x] 04-01-PLAN.md — push main to GitHub, enable Pages from repo settings, verify
 
 ## Progress
 
@@ -99,4 +101,4 @@ Phases execute in numeric order: 2.1 → 3 → 4
 | 2. Trip Photos & Notes | 2/2 | Complete | 2026-05-09 |
 | 2.1. GPX Data Pipeline | 2/2 | Complete | 2026-05-09 |
 | 3. Trail Snacks Gallery | 2/2 | Complete | 2026-05-11 |
-| 4. GitHub Pages Deployment | 0/TBD | Not started | - |
+| 4. GitHub Pages Deployment | 1/1 | Complete | 2026-05-11 |
