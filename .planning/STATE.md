@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-05-09)
 
 **Core value:** The map and snack gallery feel like a living travel scrapbook — easy to add a new trip or snack, looks great, works without a server.
-**Current focus:** Phase 2.1 — GPX Data Pipeline (INSERTED)
+**Current focus:** Phase 4 — GitHub Pages Deployment
 
 ## Current Position
 
-Phase: 3 of 5 (Trail Snacks Gallery)
+Phase: 4 of 5 (GitHub Pages Deployment)
 Plan: 0 of TBD in current phase
-Status: Ready — Phase 2.1 complete
-Last activity: 2026-05-09 — Plan 02.1-02 complete — build script written, data.js regenerated from GPX, all 7 trips render correctly
+Status: Ready — Phase 3 complete
+Last activity: 2026-05-11 — Phase 3 complete — snacks.html + snacks.jsx gallery, snacks.json sample data, nav links wired
 
-Progress: [██████░░░░] 60%
+Progress: [████████░░] 80%
 
 ## Performance Metrics
 
