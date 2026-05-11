@@ -72,7 +72,10 @@ Plans:
   3. Adding a new snack requires only editing snacks.json — no code changes
   4. Snack photos are served from media/snacks/ and render correctly
   5. A navigation link in each page header lets Ben and Janna switch between the map and snacks pages
-**Plans**: TBD
+**Plans**: 2 plans
+Plans:
+- [ ] 03-01-PLAN.md — snacks.html + snacks.jsx gallery page (sorted by joint score)
+- [ ] 03-02-PLAN.md — snacks.json sample data + Trail Snacks nav link in map header
 **UI hint**: yes
 
 ### Phase 4: GitHub Pages Deployment
@@ -95,5 +98,5 @@ Phases execute in numeric order: 2.1 → 3 → 4
 | 1. Core Map App | -/- | Complete | 2026-05-09 |
 | 2. Trip Photos & Notes | 2/2 | Complete | 2026-05-09 |
 | 2.1. GPX Data Pipeline | 2/2 | Complete | 2026-05-09 |
-| 3. Trail Snacks Gallery | 0/TBD | Not started | - |
+| 3. Trail Snacks Gallery | 0/2 | Not started | - |
 | 4. GitHub Pages Deployment | 0/TBD | Not started | - |
