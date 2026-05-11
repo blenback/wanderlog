@@ -1,10 +1,10 @@
 [
   {
-    "id": "knusperbrot",
-    "name": "Knusperbrot Bergkräuter",
-    "country": "Austria",
-    "photo": "knusperbrot.jpg",
-    "ben": { "score": 9, "note": "Perfect crunch-to-weight ratio, herby enough to feel fancy." },
+    "id": "melted_choc",
+    "name": "Melted Carrefour Chocolate Bar",
+    "country": "Corsica, France",
+    "photo": "melted_choc.jpg",
+    "ben": { "score": 9, "note": "Not given a score but highly messy to eat..." },
     "janna": { "score": 8, "note": "Could eat a whole packet before the col, no regrets." }
   },
   {
